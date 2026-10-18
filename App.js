@@ -228,6 +228,28 @@ const ALL_ANIMALS = BIOMES.flatMap((biome) =>
   biome.animals.map((animal) => ({ ...animal, biomeName: biome.name })),
 );
 
+// Proporções largura/altura dos JPEGs usados nas capas e detalhes.
+const IMAGE_ASPECT_RATIOS = {
+  amazonia: 1.5,
+  cerrado: 1.333,
+  'mata-atlantica': 1.493,
+    caatinga: 1.778,
+  pantanal: 1.486,
+  pampa: 1.333,
+  'onca-pintada': 1.5,
+    'boto-cor-de-rosa': 1.333,
+  'lobo-guara': 1.333,
+  'tamandua-bandeira': 1.5,
+  'mico-leao-dourado': 1.543,
+  tucano: 1.5,
+  'ararinha-azul': 1.361,
+  'tatu-bola': 1.333,
+  'jacare-do-pantanal': 1.5,
+  tuiuiu: 1,
+  'quero-quero': 1.333,
+  'veado-campeiro': 1.5,
+};
+
 const INITIAL_FORM = {
   name: '',
   email: '',
@@ -364,12 +386,23 @@ export default function App() {
   );
 }
 
-function LocalPhoto({ source, style, label }) {
+function LocalPhoto({ source, style, label, aspectRatio, resizeMode = 'cover' }) {
+  const frameStyle = [styles.photoFrame, style, aspectRatio ? { aspectRatio } : null];
+
   if (source) {
-    return <Image accessibilityLabel={label} resizeMode="cover" source={source} style={style} />;
+    return (
+      <View style={frameStyle}>
+        <Image
+          accessibilityLabel={label}
+          resizeMode={resizeMode}
+          source={source}
+          style={[styles.photoFill, Platform.OS === 'web' ? { objectFit: resizeMode } : null]}
+        />
+      </View>
+    );
   }
   return (
-    <View style={[styles.photoPlaceholder, style]}>
+    <View style={[frameStyle, styles.photoPlaceholder]}>
       <Text style={styles.placeholderTitle}>Foto indisponível</Text>
       <Text style={styles.placeholderSubtitle}>Imagem local ainda não adicionada</Text>
     </View>
@@ -409,7 +442,12 @@ function BiomeList({ openBiome }) {
 function BiomeScreen({ biome, openAnimal }) {
   return (
     <ScrollView contentContainerStyle={styles.scrollContent}>
-      <LocalPhoto label={biome.name} source={biome.image} style={styles.heroPhoto} />
+      <LocalPhoto
+        aspectRatio={IMAGE_ASPECT_RATIOS[biome.id]}
+        label={biome.name}
+        source={biome.image}
+        style={styles.heroPhoto}
+      />
       <Text style={styles.detailTitle}>{biome.name}</Text>
       <Text style={styles.bodyText}>{biome.description}</Text>
       <View style={styles.infoCard}>
@@ -441,7 +479,12 @@ function BiomeScreen({ biome, openAnimal }) {
 function AnimalScreen({ animal }) {
   return (
     <ScrollView contentContainerStyle={styles.scrollContent}>
-      <LocalPhoto label={animal.name} source={animal.image} style={styles.heroPhoto} />
+      <LocalPhoto
+        aspectRatio={IMAGE_ASPECT_RATIOS[animal.id]}
+        label={animal.name}
+        source={animal.image}
+        style={styles.heroPhoto}
+      />
       <Text style={styles.detailTitle}>{animal.name}</Text>
       <Text style={styles.scientificNameLarge}>{animal.scientific}</Text>
       <Text style={styles.bodyText}>{animal.description}</Text>
@@ -676,10 +719,11 @@ const styles = StyleSheet.create({
     borderColor: COLORS.border,
     borderWidth: 1,
     borderRadius: 14,
+    overflow: 'hidden',
     marginBottom: 11,
     padding: 10,
   },
-  biomeThumbnail: { width: 92, height: 98, borderRadius: 10, marginRight: 12 },
+  biomeThumbnail: { width: 92, height: 92, borderRadius: 10, marginRight: 12, overflow: 'hidden' },
   biomeCardText: { flex: 1, alignSelf: 'center' },
   cardTitle: { color: COLORS.text, fontSize: 16, fontWeight: '700', marginBottom: 4 },
   cardDescription: { color: COLORS.muted, fontSize: 12, lineHeight: 17 },
@@ -692,9 +736,25 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 10,
   },
+  photoFrame: {
+    position: 'relative',
+    overflow: 'hidden',
+    backgroundColor: '#E8EEE7',
+  },
+  photoFill: {
+    ...StyleSheet.absoluteFillObject,
+    width: '100%',
+    height: '100%',
+  },
   placeholderTitle: { color: COLORS.green, fontSize: 13, fontWeight: '700', textAlign: 'center' },
   placeholderSubtitle: { color: COLORS.muted, fontSize: 10, textAlign: 'center', marginTop: 4 },
-  heroPhoto: { width: '100%', height: 220, borderRadius: 16, marginBottom: 18 },
+  heroPhoto: {
+    width: '100%',
+    borderRadius: 16,
+    overflow: 'hidden',
+    backgroundColor: '#E8EEE7',
+    marginBottom: 18,
+  },
   detailTitle: { color: COLORS.text, fontSize: 25, fontWeight: '800', marginBottom: 8 },
   infoCard: {
     backgroundColor: COLORS.white,
@@ -717,10 +777,11 @@ const styles = StyleSheet.create({
     borderColor: COLORS.border,
     borderWidth: 1,
     borderRadius: 14,
+    overflow: 'hidden',
     marginBottom: 12,
     padding: 10,
   },
-  animalThumbnail: { width: 84, height: 100, borderRadius: 10, marginRight: 12 },
+  animalThumbnail: { width: 84, height: 84, borderRadius: 10, marginRight: 12, overflow: 'hidden' },
   animalCardContent: { flex: 1 },
   scientificName: { color: COLORS.muted, fontSize: 12, fontStyle: 'italic', marginBottom: 5 },
   scientificNameLarge: { color: COLORS.muted, fontSize: 15, fontStyle: 'italic', marginTop: -4, marginBottom: 12 },

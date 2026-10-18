@@ -26,7 +26,7 @@ const BIOMES = [
       'A Amazônia ocupa grande parte do norte do Brasil e reúne a maior floresta tropical do país. A região é atravessada por rios extensos, recebe chuvas abundantes e abriga enorme diversidade de plantas e animais. Sua vegetação influencia os ciclos de água e o clima em diferentes partes da América do Sul.',
     region: 'Norte do Brasil',
     climate: 'Equatorial, quente e úmido, com chuvas frequentes.',
-    territory: '~49%',
+    territory: 'Consultar mapa oficial do IBGE (edição 2025).',
     animals: [
       {
         id: 'onca-pintada',
@@ -37,7 +37,8 @@ const BIOMES = [
           'A onça-pintada é o maior felino das Américas e tem pelagem amarela com rosetas escuras. É uma predadora de topo, excelente nadadora e pode viver em florestas, áreas alagáveis e outros ambientes com água e cobertura vegetal. A perda de habitat e os conflitos com pessoas são ameaças importantes.',
         diet: 'Carnívora; caça mamíferos, répteis e peixes.',
         habitat: 'Florestas, margens de rios e áreas alagáveis.',
-        conservation: 'Quase ameaçada (IUCN).',
+        conservation: 'Quase ameaçada (IUCN, 2016).',
+        source: 'IUCN Red List — avaliação global de 2016',
       },
       {
         id: 'boto-cor-de-rosa',
@@ -48,7 +49,8 @@ const BIOMES = [
           'O boto-cor-de-rosa é um golfinho de água doce encontrado nas bacias amazônicas. Seu focinho comprido ajuda a capturar peixes entre raízes e galhos submersos, e o pescoço flexível facilita manobras em áreas inundadas. A espécie enfrenta riscos associados à captura acidental, poluição e alterações dos rios.',
         diet: 'Principalmente peixes; também pode consumir crustáceos.',
         habitat: 'Rios, lagos e florestas inundadas da Amazônia.',
-        conservation: 'Em perigo (IUCN).',
+        conservation: 'Em perigo (IUCN, 2018).',
+        source: 'IUCN Red List — avaliação global de 2018',
       },
     ],
   },
@@ -60,7 +62,7 @@ const BIOMES = [
       'O Cerrado é uma vasta savana tropical do Brasil central, com campos, árvores retorcidas, matas de galeria e veredas. Tem estação seca e estação chuvosa bem marcadas. Suas nascentes alimentam importantes bacias hidrográficas, e muitas plantas possuem adaptações a solos pobres, fogo natural e períodos sem chuva.',
     region: 'Brasil central, sobretudo Centro-Oeste e partes do Sudeste, Norte e Nordeste',
     climate: 'Tropical sazonal, com verão chuvoso e inverno seco.',
-    territory: '~24%',
+    territory: 'Consultar mapa oficial do IBGE (edição 2025).',
     animals: [
       {
         id: 'lobo-guara',
@@ -71,7 +73,8 @@ const BIOMES = [
           'O lobo-guará é o maior canídeo da América do Sul. Suas pernas longas ajudam a caminhar pela vegetação alta, e sua dieta inclui frutos, especialmente a lobeira, além de pequenos animais. A espécie vive em áreas abertas e depende de paisagens suficientemente conectadas para buscar alimento e parceiros.',
         diet: 'Onívoro; frutos, pequenos mamíferos, aves e insetos.',
         habitat: 'Cerrados, campos e áreas abertas com vegetação nativa.',
-        conservation: 'Quase ameaçado (IUCN).',
+        conservation: 'Quase ameaçado (IUCN, 2015; avaliação precisa atualização).',
+        source: 'IUCN Red List — avaliação global de 2015, marcada como precisando de atualização',
       },
       {
         id: 'tamandua-bandeira',
@@ -82,7 +85,8 @@ const BIOMES = [
           'O tamanduá-bandeira tem focinho comprido, língua pegajosa e uma cauda volumosa, características que o ajudam a procurar formigas e cupins. Não possui dentes e usa garras fortes para abrir ninhos. Incêndios, atropelamentos e perda de áreas naturais estão entre os riscos enfrentados pela espécie.',
         diet: 'Formigas e cupins.',
         habitat: 'Savanas, campos, florestas e áreas úmidas.',
-        conservation: 'Vulnerável (IUCN).',
+        conservation: 'Vulnerável (IUCN, 2024).',
+        source: 'IUCN Red List — avaliação global de 2024',
       },
     ],
   },
@@ -94,7 +98,7 @@ const BIOMES = [
       'A Mata Atlântica acompanha grande parte da costa brasileira e também ocorre em áreas interiores. Inclui florestas úmidas, matas de altitude, restingas e manguezais. Embora muito fragmentada por ocupação humana, conserva espécies que não existem naturalmente em outros lugares e protege nascentes importantes para numerosas cidades.',
     region: 'Faixa litorânea do Nordeste ao Sul, com áreas interiores',
     climate: 'Predominantemente tropical úmido; varia com latitude e altitude.',
-    territory: '~13%',
+    territory: 'Consultar mapa oficial do IBGE (edição 2025).',
     animals: [
       {
         id: 'mico-leao-dourado',
@@ -105,7 +109,8 @@ const BIOMES = [
           'O mico-leão-dourado é um pequeno primata de pelagem alaranjada, endêmico da Mata Atlântica do estado do Rio de Janeiro. Vive em grupos familiares e usa cavidades de árvores para abrigo. A conservação depende da proteção e conexão de fragmentos florestais e de ações de manejo da espécie.',
         diet: 'Frutos, insetos, pequenos vertebrados e néctar.',
         habitat: 'Florestas baixas da Mata Atlântica no Rio de Janeiro.',
-        conservation: 'Em perigo (IUCN).',
+        conservation: 'Em perigo (IUCN, 2015; avaliação precisa atualização).',
+        source: 'IUCN Red List — avaliação global de 2015, marcada como precisando de atualização',
       },
       {
         id: 'tucano',
@@ -116,7 +121,8 @@ const BIOMES = [
           'O tucano-toco é reconhecido pelo bico grande e colorido, que é leve apesar do tamanho. Alimenta-se principalmente de frutos, mas também consome ovos e pequenos animais. Pode dispersar sementes ao se deslocar entre áreas de alimentação. Ocorre em diferentes paisagens arborizadas da América do Sul.',
         diet: 'Frutos, ovos, insetos e pequenos vertebrados.',
         habitat: 'Matas, bordas florestais e áreas arborizadas abertas.',
-        conservation: 'Pouco preocupante (IUCN).',
+        conservation: 'Pouco preocupante (IUCN, 2025).',
+        source: 'IUCN Red List — avaliação global de 2025',
       },
     ],
   },
@@ -128,7 +134,7 @@ const BIOMES = [
       'A Caatinga é um bioma exclusivamente brasileiro, predominante no interior do Nordeste. Seu clima é semiárido, com chuvas irregulares e longos períodos secos. Muitas plantas perdem as folhas na estiagem, e animais apresentam adaptações para economizar água e aproveitar os recursos disponíveis após as chuvas.',
     region: 'Interior do Nordeste e norte de Minas Gerais',
     climate: 'Semiárido, quente e com chuvas irregulares.',
-    territory: '~10%',
+    territory: 'Consultar mapa oficial do IBGE (edição 2025).',
     animals: [
       {
         id: 'ararinha-azul',
@@ -136,10 +142,11 @@ const BIOMES = [
         scientific: 'Cyanopsitta spixii',
         image: require('./assets/animais/ararinha-azul.jpg'),
         description:
-          'A ararinha-azul é uma espécie brasileira de arara que vive naturalmente em matas ciliares associadas à Caatinga. A captura e a perda de habitat levaram ao desaparecimento de populações selvagens. Projetos de conservação envolvem reprodução sob cuidados humanos, reintrodução monitorada e recuperação do ambiente original.',
+          'A ararinha-azul é uma arara nativa do Brasil, associada a florestas secas e arbustais da Caatinga. A captura e a perda de habitat contribuíram para seu desaparecimento na natureza. A espécie é mantida em programas de conservação sob cuidados humanos e está classificada como extinta na natureza pela IUCN.',
         diet: 'Sementes e frutos de plantas nativas.',
-        habitat: 'Matas ciliares de galeria da Caatinga, especialmente na região do riacho da Vaza-Barris.',
-        conservation: 'Criticamente em perigo (IUCN), após décadas extinta na natureza.',
+        habitat: 'Florestas secas e arbustais do Nordeste brasileiro; atualmente depende de manejo e reintrodução.',
+        conservation: 'Extinta na natureza (IUCN, 2019).',
+        source: 'IUCN Red List — avaliação global de 2019',
       },
       {
         id: 'tatu-bola',
@@ -150,7 +157,8 @@ const BIOMES = [
           'O tatu-bola-da-caatinga é um pequeno tatu brasileiro capaz de enrolar o corpo e fechar a carapaça como defesa. Alimenta-se de insetos e outros invertebrados e utiliza áreas de vegetação nativa para buscar abrigo e alimento. Caça e conversão do habitat ameaçam suas populações.',
         diet: 'Insetos e outros pequenos invertebrados.',
         habitat: 'Caatinga e áreas de Cerrado próximas.',
-        conservation: 'Vulnerável (IUCN).',
+        conservation: 'Vulnerável (IUCN, 2013; avaliação precisa atualização).',
+        source: 'IUCN Red List — avaliação global de 2013, marcada como precisando de atualização',
       },
     ],
   },
@@ -162,7 +170,7 @@ const BIOMES = [
       'O Pantanal é uma grande planície alagável no Centro-Oeste, marcada por cheias e secas sazonais. Rios e áreas inundadas sustentam ambientes variados, como campos, matas e lagoas. A fauna é abundante e acompanha o pulso das águas, que influencia a disponibilidade de alimento e os deslocamentos dos animais.',
     region: 'Mato Grosso e Mato Grosso do Sul',
     climate: 'Tropical continental, com estação chuvosa e período seco.',
-    territory: '~2%',
+    territory: 'Consultar mapa oficial do IBGE (edição 2025).',
     animals: [
       {
         id: 'jacare-do-pantanal',
@@ -173,7 +181,8 @@ const BIOMES = [
           'O jacaré-do-pantanal é um réptil semiaquático que vive em rios, lagoas e áreas inundadas do Centro da América do Sul. Alimenta-se de peixes e outros animais aquáticos. Durante a seca, pode concentrar-se em corpos d’água remanescentes, onde encontra abrigo e alimento.',
         diet: 'Peixes, crustáceos e outros animais aquáticos.',
         habitat: 'Rios, lagoas, baías e áreas alagáveis do Pantanal.',
-        conservation: 'Pouco preocupante (IUCN).',
+        conservation: 'Pouco preocupante (IUCN, 2019).',
+        source: 'IUCN Red List — avaliação global de 2019',
       },
       {
         id: 'tuiuiu',
@@ -184,7 +193,8 @@ const BIOMES = [
           'O tuiuiú é uma grande ave de áreas úmidas, símbolo do Pantanal. Tem corpo branco, pescoço preto e uma faixa vermelha na base do pescoço. Constrói ninhos volumosos em árvores e se alimenta em águas rasas, capturando peixes, anfíbios e outros pequenos animais.',
         diet: 'Peixes, anfíbios, répteis e pequenos invertebrados.',
         habitat: 'Brejos, lagoas, margens de rios e campos alagáveis.',
-        conservation: 'Pouco preocupante (IUCN).',
+        conservation: 'Pouco preocupante (IUCN, 2019).',
+        source: 'IUCN Red List — avaliação global de 2019',
       },
     ],
   },
@@ -196,7 +206,7 @@ const BIOMES = [
       'O Pampa brasileiro ocorre no Rio Grande do Sul e é formado principalmente por campos naturais, com gramíneas, ervas e arbustos. A paisagem aberta abriga espécies adaptadas a áreas campestres e possui grande diversidade de plantas. Agricultura, silvicultura e conversão dos campos alteram esse ambiente.',
     region: 'Sul do Rio Grande do Sul',
     climate: 'Subtropical, com estações do ano bem definidas.',
-    territory: '~2%',
+    territory: 'Consultar mapa oficial do IBGE (edição 2025).',
     animals: [
       {
         id: 'quero-quero',
@@ -207,7 +217,8 @@ const BIOMES = [
           'O quero-quero é uma ave comum em campos abertos e áreas úmidas da América do Sul. Possui esporões nas asas e costuma vocalizar quando percebe intrusos perto do ninho. Alimenta-se no solo e se adapta a campos naturais, pastagens e ambientes modificados, embora dependa de locais adequados para nidificar.',
         diet: 'Insetos e outros invertebrados encontrados no solo.',
         habitat: 'Campos, pastagens, margens de lagoas e áreas abertas.',
-        conservation: 'Pouco preocupante (IUCN).',
+        conservation: 'Pouco preocupante (IUCN, 2019).',
+        source: 'IUCN Red List — avaliação global de 2019',
       },
       {
         id: 'veado-campeiro',
@@ -218,7 +229,8 @@ const BIOMES = [
           'O veado-campeiro é um cervídeo de áreas abertas que ocorre em campos e savanas da América do Sul. Alimenta-se de plantas e costuma permanecer alerta em paisagens com boa visibilidade. A perda e fragmentação dos campos naturais reduzem áreas adequadas para abrigo, alimentação e deslocamento.',
         diet: 'Gramíneas, folhas e outras plantas.',
         habitat: 'Campos naturais e savanas abertas.',
-        conservation: 'Quase ameaçado (IUCN).',
+        conservation: 'Quase ameaçado (IUCN, 2015; avaliação precisa atualização).',
+        source: 'IUCN Red List — avaliação global de 2015, marcada como precisando de atualização',
       },
     ],
   },
@@ -233,11 +245,11 @@ const IMAGE_ASPECT_RATIOS = {
   amazonia: 1.5,
   cerrado: 1.333,
   'mata-atlantica': 1.493,
-    caatinga: 1.778,
+  caatinga: 1.778,
   pantanal: 1.486,
   pampa: 1.333,
   'onca-pintada': 1.5,
-    'boto-cor-de-rosa': 1.333,
+  'boto-cor-de-rosa': 1.333,
   'lobo-guara': 1.333,
   'tamandua-bandeira': 1.5,
   'mico-leao-dourado': 1.543,
@@ -412,12 +424,26 @@ function LocalPhoto({ source, style, label, aspectRatio, resizeMode = 'cover' })
 function BiomeList({ openBiome }) {
   return (
     <ScrollView contentContainerStyle={styles.scrollContent}>
-      <View style={styles.introCard}>
-        <Text style={styles.eyebrow}>NATUREZA BRASILEIRA</Text>
-        <Text style={styles.introTitle}>Conheça a vida que floresce em cada paisagem.</Text>
-        <Text style={styles.bodyText}>
-          Explore os biomas do Brasil e descubra alguns dos animais que vivem em cada um deles.
-        </Text>
+      <View style={styles.featureCard}>
+        <LocalPhoto
+          aspectRatio={IMAGE_ASPECT_RATIOS.amazonia}
+          label="Paisagem da Amazônia"
+          source={BIOMES[0].image}
+          style={styles.featureImage}
+        />
+        <View style={styles.featureContent}>
+          <Text style={styles.eyebrow}>NATUREZA BRASILEIRA</Text>
+          <Text style={styles.introTitle}>Biomas do Brasil</Text>
+          <Text style={styles.bodyText}>
+            O Brasil reúne paisagens diversas, de florestas úmidas a campos e áreas alagadas. Cada bioma abriga espécies adaptadas às suas condições naturais.
+          </Text>
+        </View>
+      </View>
+      <View style={styles.homeInfoCard}>
+        <InfoRow label="Total de biomas" value="6" />
+        <InfoRow label="Animais catalogados" value="12" />
+        <InfoRow label="Região" value="Brasil" />
+        <InfoRow label="Tema" value="Fauna dos biomas brasileiros" />
       </View>
       <Text style={styles.sectionHeading}>Biomas</Text>
       {BIOMES.map((biome) => (
@@ -453,7 +479,7 @@ function BiomeScreen({ biome, openAnimal }) {
       <View style={styles.infoCard}>
         <InfoRow label="Região principal" value={biome.region} />
         <InfoRow label="Clima" value={biome.climate} />
-        <InfoRow label="Percentual aproximado do território brasileiro" value={biome.territory} />
+        <InfoRow label="Área territorial" value={biome.territory} />
       </View>
       <Text style={styles.animalsHeading}>Animais</Text>
       {biome.animals.map((animal) => (
@@ -472,6 +498,7 @@ function BiomeScreen({ biome, openAnimal }) {
           <Text style={styles.chevron}>&gt;</Text>
         </TouchableOpacity>
       ))}
+      <SourceNote text="IBGE, Biomas e Sistema Costeiro-Marinho do Brasil, edição 2025" />
     </ScrollView>
   );
 }
@@ -494,6 +521,7 @@ function AnimalScreen({ animal }) {
         {animal.conservation ? <InfoRow label="Estado de conservação" value={animal.conservation} /> : null}
         <InfoRow label="Bioma em destaque" value={animal.biomeName} />
       </View>
+      <SourceNote text={animal.source} />
     </ScrollView>
   );
 }
@@ -504,6 +532,14 @@ function InfoRow({ label, value }) {
       <Text style={styles.infoLabel}>{label}</Text>
       <Text style={styles.infoValue}>{value}</Text>
     </View>
+  );
+}
+
+function SourceNote({ text }) {
+  return (
+    <Text style={styles.sourceNote}>
+      Fonte: {text} — consultado em 17/10/2026
+    </Text>
   );
 }
 
@@ -707,6 +743,25 @@ const styles = StyleSheet.create({
     padding: 20,
     marginBottom: 22,
   },
+  featureCard: {
+    backgroundColor: COLORS.white,
+    borderColor: COLORS.border,
+    borderWidth: 1,
+    borderRadius: 14,
+    overflow: 'hidden',
+    marginBottom: 14,
+  },
+  featureImage: { width: '100%' },
+  featureContent: { padding: 16 },
+  homeInfoCard: {
+    backgroundColor: COLORS.white,
+    borderColor: COLORS.border,
+    borderWidth: 1,
+    borderRadius: 14,
+    paddingHorizontal: 16,
+    paddingVertical: 4,
+    marginBottom: 22,
+  },
   eyebrow: { color: COLORS.green, fontSize: 11, fontWeight: '800', marginBottom: 8 },
   introTitle: { color: COLORS.text, fontSize: 22, lineHeight: 29, fontWeight: '700', marginBottom: 9 },
   bodyText: { color: COLORS.muted, fontSize: 15, lineHeight: 23 },
@@ -769,6 +824,7 @@ const styles = StyleSheet.create({
   infoRow: { paddingVertical: 11, borderBottomColor: '#E8EDE7', borderBottomWidth: StyleSheet.hairlineWidth },
   infoLabel: { color: COLORS.muted, fontSize: 12, fontWeight: '600', marginBottom: 3 },
   infoValue: { color: COLORS.text, fontSize: 14, lineHeight: 20 },
+  sourceNote: { color: COLORS.muted, fontSize: 11, lineHeight: 16, marginTop: 8, marginBottom: 14 },
   animalsHeading: { color: COLORS.green, fontSize: 20, fontWeight: '800', textAlign: 'center', marginBottom: 13 },
   animalCard: {
     flexDirection: 'row',
